@@ -29,6 +29,22 @@ Migration:
 `mix test` => run built in tests
 
 
+
+Dependancies: 
+
+Add the following to mix.exs:
+
+      {:absinthe, "~> 1.4"},
+      {:absinthe_ecto, "~> 0.1.3"},
+      {:absinthe_plug, "~> 1.4"},
+      {:absinthe_phoenix, "~> 1.4.0"},
+      {:cors_plug, "~> 2.0"},
+
+The first four packages are related to Absinthe, a popular Elixir library for implementing a GraphQL server. We need the CORS plug to grant permission to the client to make requests.
+
+`mix deps.get`
+
+
 ### Add React frontend:
 
 `npx create-react-app client` => creates a client directory with create-react-app
@@ -43,3 +59,10 @@ Dependancies:
  `yarn add @absinthe/socket @absinthe/socket-apollo-link apollo-boost graphql graphql-tag react-apollo`
 
  Absinthe is a popular Elixir library for implementing a GraphQL server. Apollo is a popular JS library for consuming a GraphQL API.
+
+
+
+### Other notes:
+
+- In GraphQL, mutations are how the client can create, update, or delete an object.
+- A resolver is a function that returns something back to the client.
